@@ -1,0 +1,328 @@
+:root {
+  background: #111;
+  color: #fff;
+  font-family: "Bai Jamjuree", sans-serif;
+}
+
+body {
+  background-color: #111;
+}
+
+h1 {
+  color: lime;
+}
+
+h2 {
+  color: white;
+  padding-bottom: 0;
+}
+
+h3 {
+  color: lime;
+}
+
+p {
+  margin: 0;
+}
+
+.dmdLogo {
+  max-width: 200px;
+  padding-top: 3em;
+  padding-left: 3em;
+}
+
+.title {
+  padding-bottom: 1em;
+}
+
+.left-side {
+  float: left;
+  padding-left: 1em;
+  text-align: left;
+}
+
+.right-side {
+  float: right;
+  padding-right: 1em;
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.directions {
+  text-align: center;
+  font-size: 22px;
+  padding-top: 20px;
+}
+
+.spin-the-wheel {
+  margin: auto;
+  width: 500px;
+  cursor: pointer;
+  padding-top: 4em;
+  padding-bottom: 1em;
+}
+
+label {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  background-color: lime;
+  box-shadow: 0 0 20px lime;
+  border-radius: 50%;
+}
+
+input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.wheel {
+  position: relative;
+  height: 500px;
+  width: 500px;
+}
+
+.option {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+}
+
+.o1 {
+  background-color: #111;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+}
+.o1 .lbl {
+  padding-bottom: 15em;
+  padding-top: 4em;
+  padding-left: 0em;
+  padding-right: 0em;
+  transform: rotate(-55deg);
+}
+.o1-2 {
+  background-color: #111;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+  transform-origin: bottom right;
+  transform: rotate(-25deg);
+}
+
+.o2 {
+  background-color: #8c2020;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 100%;
+}
+.o2 .lbl {
+  padding-top: 2em;
+  padding-right: 6em;
+  transform: rotate(20deg);
+}
+
+.o7 {
+  background-color: blue;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 100%;
+  transform-origin: bottom left;
+  transform: rotate(-10deg);
+}
+.o7 .lbl {
+  padding-top: 14.5em;
+  padding-right: 10em;
+  transform: rotate(96deg);
+}
+
+.o3 {
+  background-color: #dd281a;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 100%;
+}
+.o3 .lbl {
+  padding-bottom: 3.8em;
+  padding-left: 6.8em;
+  transform: rotate(148deg);
+}
+
+.o4 {
+  background-color: lime;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%;
+}
+.o4 .lbl {
+  padding-top: 5.3em;
+  padding-left: 10em;
+  transform: rotate(45deg);
+}
+
+.o5 {
+  background-color: #111;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%;
+  transform-origin: top left;
+  transform: rotate(47deg);
+}
+.o5 .lbl {
+  padding-bottom: 9.5em;
+  padding-left: 4em;
+  transform: rotate(140deg);
+}
+
+.o6 {
+  background-color: #414141;
+  bottom: 0;
+  right: 0;
+  border-bottom-right-radius: 100%;
+  transform-origin: top left;
+  transform: rotate(-48deg);
+}
+.o6 .lbl {
+  padding-bottom: 9em;
+  padding-right: 0em;
+  padding-left: 3em;
+  transform: rotate(140deg);
+}
+
+.message {
+  position: absolute;
+  padding: 20px;
+  background-color: black;
+  color: lime;
+  text-align: center;
+  box-shadow: 0 0 10px lime;
+  top: 178px;
+  left: 178px;
+  width: 100px;
+  z-index: 5;
+  opacity: 0;
+}
+
+.clicker {
+  position: absolute;
+  z-index: 30;
+  height: 0;
+  width: 0;
+  left: 230px;
+  top: -30px;
+  border-width: 20px 20px 0 20px;
+  transform: scaley(2);
+  transform-origin: 50% 0;
+  border-color: gold transparent transparent transparent;
+  border-style: solid;
+}
+
+:checked ~ .wheel {
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1665deg);
+  }
+}
+
+:checked ~ .message {
+  animation-name: winner;
+  animation-delay: 2.9s;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes winner {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+:checked ~ .clicker {
+  animation-name: Clicker;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+@keyframes Clicker {
+  0%,
+  100% {
+    transform: rotate(0deg) scaley(2);
+  }
+  5%,
+  10%,
+  16%,
+  23%,
+  31%,
+  40%,
+  50%,
+  61%,
+  73%,
+  86% {
+    transform: rotate(-15deg) scaley(2);
+  }
+  7.5%,
+  13%,
+  20.5%,
+  27%,
+  35.5%,
+  45%,
+  55.5%,
+  67%,
+  79.5% {
+    transform: rotate(-10deg) scaley(2);
+  }
+}
+
+a {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50000;
+}
+
+:checked ~ a {
+  display: block;
+  animation-name: Linkable;
+  animation-delay: 3.1s;
+  animation-fill-mode: both;
+  animation-duration: 0.1s;
+}
+
+@keyframes Linkable {
+  0% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
